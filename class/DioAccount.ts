@@ -33,8 +33,10 @@ export abstract class DioAccount {
       if(this.balance - value >= 0){
         this.balance -= value;
         console.log(`Você sacou! Seu saldo atual é ${this.balance}`);
+      }else{
+        console.log("Saldo indisponível");
       }
-      console.log("Saldo indisponível");
+      
     }
    
   }
@@ -43,7 +45,7 @@ export abstract class DioAccount {
     console.log(this.balance)
   }
 
-  private validateStatus = (): boolean => {
+   validateStatus = (): boolean => {
     if (this.status) {
       return this.status
     }
